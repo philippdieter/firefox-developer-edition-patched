@@ -1,0 +1,32 @@
+--- a/docshell/base/nsDocShell.cpp	2019-12-18 05:12:03.000000000 +0100
++++ b/docshell/base/nsDocShell.cpp	2019-12-20 00:22:31.244098605 +0100
+@@ -11533,18 +11533,18 @@
+    * reload or shift-reload, take user's permission before we
+    * repost the data to the server.
+    */
+-  if ((aLoadType & LOAD_CMD_RELOAD) && loadState->PostDataStream()) {
+-    bool repost;
+-    rv = ConfirmRepost(&repost);
+-    if (NS_FAILED(rv)) {
+-      return rv;
+-    }
++  //if ((aLoadType & LOAD_CMD_RELOAD) && loadState->PostDataStream()) {
++  //  bool repost;
++  //  rv = ConfirmRepost(&repost);
++  //  if (NS_FAILED(rv)) {
++  //    return rv;
++  //  }
+ 
+-    // If the user pressed cancel in the dialog, return.  We're done here.
+-    if (!repost) {
+-      return NS_BINDING_ABORTED;
+-    }
+-  }
++  //  // If the user pressed cancel in the dialog, return.  We're done here.
++  //  if (!repost) {
++  //    return NS_BINDING_ABORTED;
++  //  }
++  //}
+ 
+   // If there is no valid triggeringPrincipal, we deny the load
+   MOZ_ASSERT(loadState->TriggeringPrincipal(),
